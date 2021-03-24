@@ -152,14 +152,34 @@
         margin: 16px 16px 0 0;
         display: flex;
     }
+    .info__buttons{
+        justify-content: space-between;
+    }
     .button__more,
     .button__favorite {
-        max-width: none;
-        flex: 1;
-        margin: 0 0 6px 0;
+        max-width: 49%;
+        flex: 1 1 ;
+        margin: 0 0px 6px 0;
     }
 }
+
+@media screen and (max-width: 580px){
+    
+    .info__buttons{
+        justify-content:center;
+    }
+    .button__more,
+    .button__favorite{
+        min-width: 80%;
+        max-width: 100%;
+        margin: 0 0px 6px 0;
+    }
+
+}
+
+
 .thumbnailSlider {
+    display: none;
     margin: 140px 40px 0 0;
     top: 0;
     right: 0;

@@ -154,3 +154,22 @@
 .Card17:hover::after{
     background: linear-gradient(90deg, #00D1FF 6.3%, rgba(0, 209, 255, 0.5) 97.78%);
 }
+
+
+
+@media screen and (max-width: 580px){
+    
+    .CategorieBtnSmall {
+    
+       
+        max-width: 100%;
+       
+    }
+    .CategorieBtnSmall img {
+        width: 100%;
+        height: auto;
+        left: 50%;
+        
+    }
+
+}

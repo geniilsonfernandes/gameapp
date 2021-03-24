@@ -1,4 +1,4 @@
-import React, {useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 // css
 import styles from "./Coversingle.module.css";
@@ -13,51 +13,30 @@ import MoreSvg from "../../../svg/cover/MoreSvg";
 import FavoriteSvg from "../../../svg/nav/FavoriteSvg";
 import Skeleton from "../../utilities/skeleton/Skeleton";
 
-
-
-
-
-
-
-
-//api
-const apiKey = "?key=2f93b9a7bffb481a9ab214dcdb9530f0";
-const fetchBasic = async (id) => {
-  const response = await fetch(`https://api.rawg.io/api/games/${id}${apiKey}`);
-  const dados = await response.json();
-  return dados;
-};
+import rawg from "../../../data/rawg";
 
 //418467
 const Coversingle = () => {
-  
-
-  const [game, setGame] = useState({});
-  const [carregando, setCarregando] = useState(true);
-  
+  const [gamelist, setGamelist] = useState([]);
+  const [loading, setLoading] = useState(true)
   
   useEffect(() => {
-    const loadDate = async () => {
-      //get dados
-      let r = await fetchBasic(418467);
-      //
-      setGame(r);
-      console.log(r);
-      //
-    };
-    loadDate();
+    async function fetchData() {
+      // You can await here
+      const response = await rawg.gameSigle(418467);
+      // ...
+      setGamelist(response);
+    }
+    fetchData();
   }, []);
 
   useEffect(() => {
-    if (game!=={}) {
-      setCarregando(true)
-      console.log('tem dados');
-    }else{
-      console.log('n tem dados');
+    if (gamelist.length === 0) {
+      setLoading(true)
+    } else {
+      setLoading(false)
     }
-  }, [game])
-
-
+  }, [gamelist]);
 
   return (
     <div className={global.mwfix}>
@@ -69,17 +48,12 @@ const Coversingle = () => {
       </div>
       <div className={styles.cover__photo}>
         <div className={styles.game__info}>
-          <div className={styles.info__name}>{
-            carregando
-          }
-            <h1>{true ? <Skeleton width={330} height={36} /> : game.name}</h1>
+          <div className={styles.info__name}>
+            <h1>{loading?<Skeleton width={300} height={36} />:gamelist.publishers[0].name}</h1>
           </div>
           <div className={styles.info__publisher}>
-            {true ? (
-              <Skeleton width={130} height={24} />
-            ) : (
-              <p>{game.publishers[0].name}</p>
-            )}
+            <p>xczxczxcz</p>
+
             <div className={styles.info__platforms}>
               <PsSvg />
               <WinSvg />
@@ -88,11 +62,7 @@ const Coversingle = () => {
           </div>
           <div className={styles.divisor}> </div>
           <div className={styles.description}>
-          {true ? (
-              <Skeleton width={130} height={24} />
-            ) : (
-              <p>{game.description_raw.substring(0, 150) + "..."}</p>
-            )}
+            <p>czxczczcz</p>
           </div>
           <div className={styles.info__buttons}>
             <button className={styles.button__more}>

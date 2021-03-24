@@ -5,12 +5,12 @@
 
 @keyframes skeleton {
     0% {
-        background: #272e31;
+        background: #ffffff3a;
     }
     50% {
-        background: #1e2325;
+        background: #ffffff4b;
     }
     100% {
-        background: #272e31;
+        background: #ffffff3a;
     }
 }
