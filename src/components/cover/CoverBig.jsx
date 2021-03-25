@@ -68,10 +68,10 @@ const CoverBig = () => {
       <div
         className={styles.cover__photo}
         style={
-          true
+          loading
             ? { background: "#1e2325" }
             : {
-                background: "red",
+                backgroundImage: `url(${gamelist[countGame].background_image})`
               }
         }
       >

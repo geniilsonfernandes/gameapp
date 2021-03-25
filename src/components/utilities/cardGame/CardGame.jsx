@@ -1,6 +1,6 @@
 import React from "react";
 import card from "./CardGame.module.css";
-import imggame from "../../../img/cardGameFild.png";
+
 
 //svg
 import WinSvg from "../../../svg/cover/WinSvg";
@@ -20,7 +20,7 @@ const CardGame = () => {
   return (
     <div className={card.cardgame}>
       <div className={ card.cardImage}>
-        <img src={imggame} alt="" />
+        
       </div>
       <div className={card.info}>
         <h2>Mass Effect™: Andromeda</h2>

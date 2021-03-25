@@ -14,3 +14,8 @@
         background: #ffffff3a;
     }
 }
+@media screen and (max-width: 446px){
+    .skeleton {
+        max-width: 100%;
+    }
+}

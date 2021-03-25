@@ -5,6 +5,8 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
+
+
 }
 .cardImage {
     margin: 4px 4px 0 4px;
@@ -12,13 +14,12 @@
     height: 174px;
     max-width: 100%;
     position: relative;
+
+    background-image: url(../../../img/cardGameFild.png);
+    background-size: cover;
+
 }
-.cardImage img {
-    height: 174px;
-    max-width: 100%;
-    border-radius: 8px;
-    
-}
+
 .info {
     margin-top: 8px;
     padding: 0 8px;
@@ -66,7 +67,8 @@
 .button__favorite {
     cursor: pointer;
     min-width: 120px;
-    max-width: 270px;
+    max-width: 49%;
+    flex: 1 0 auto;
     height: 38px;
     padding: 0 8px;
     border: none;
@@ -88,6 +90,7 @@
 
 .button__more {
     background: #591beb;
+    
 }
 .button__favorite {
     background: transparent;
@@ -101,10 +104,29 @@
     height: 5px;
     bottom: 0;
 }
+@media screen and (max-width: 1180px){
+    .button__more,
+    .button__favorite{
+        min-width: 80%;
+        max-width: 100%;
+        flex: 1 0 auto;
+        margin-top: 8px;
+    }
+}
 
 @media screen and (max-width: 746px){
     .button__more,
     .button__favorite{
+        flex: 1 0 auto;
+        margin-top: 8px;
+    }
+}
+
+@media screen and (max-width: 446px){
+    .button__more,
+    .button__favorite{
+        min-width: 80%;
+        max-width: 100%;
         flex: 1 0 auto;
         margin-top: 8px;
     }

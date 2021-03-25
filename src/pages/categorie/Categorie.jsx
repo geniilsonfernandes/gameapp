@@ -23,6 +23,11 @@ const Categorie = () => {
         <CardGame />
        
       </div>
+      <div className={categorie.seemore}>
+          <div className={categorie.seemoreBtn}>
+                  See more
+          </div>
+      </div>
     </section>
   );
 };

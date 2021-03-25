@@ -1,17 +1,44 @@
-
-
-
-.grid{
+.grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap:16px;
+    gap: 16px;
     margin: 0 8px;
 }
 
-@media screen and (max-width: 746px){
-    .grid{
+.seemore {
+    cursor: pointer;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.seemoreBtn {
+    padding: 8px 16px;
+    background: #202528;
+    color: #fff;
+    border-radius: 4px;
+}
+.seemoreBtn:hover{
+    background: #2c3336;
+}
+@media screen and (max-width: 1080px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+@media screen and (max-width: 746px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+@media screen and (max-width: 446px) {
+    .grid {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap:16px;
+        gap: 16px;
     }
 }
