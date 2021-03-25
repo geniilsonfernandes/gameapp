@@ -5,8 +5,6 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
-
-
 }
 .cardImage {
     margin: 4px 4px 0 4px;
@@ -14,10 +12,17 @@
     height: 174px;
     max-width: 100%;
     position: relative;
-
-    background-image: url(../../../img/cardGameFild.png);
-    background-size: cover;
-
+    overflow: hidden;
+    background: #202528;
+}
+.card__background {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    object-fit: cover;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .info {
@@ -59,7 +64,6 @@
     flex-flow: wrap;
     justify-content: space-between;
 
-
     padding: 0 8px 8px 8px;
 }
 
@@ -90,44 +94,75 @@
 
 .button__more {
     background: #591beb;
-    
 }
 .button__favorite {
     background: transparent;
     border: 1px solid #ffffff;
 }
 
-.Action4{
+.Action4 {
     position: absolute;
-    background: #0040E5;
+    background: #0040e5;
     width: 100%;
     height: 5px;
     bottom: 0;
 }
-@media screen and (max-width: 1180px){
+@media screen and (max-width: 1442px) {
+    
+    .card__background {
+        width: auto;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        object-fit: contain;
+        object-position: bottom;
+    }
+}
+
+@media screen and (max-width: 1180px) {
     .button__more,
-    .button__favorite{
+    .button__favorite {
         min-width: 80%;
         max-width: 100%;
         flex: 1 0 auto;
         margin-top: 8px;
     }
+    .card__background {
+        width: auto;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        object-fit: contain;
+        object-position: bottom;
+    }
 }
 
-@media screen and (max-width: 746px){
+@media screen and (max-width: 746px) {
     .button__more,
-    .button__favorite{
+    .button__favorite {
         flex: 1 0 auto;
         margin-top: 8px;
     }
 }
 
-@media screen and (max-width: 446px){
+@media screen and (max-width: 446px) {
     .button__more,
-    .button__favorite{
+    .button__favorite {
         min-width: 80%;
         max-width: 100%;
         flex: 1 0 auto;
         margin-top: 8px;
+    }
+
+    .cardImage {
+        height: 274px;
+    }
+    .card__background {
+        width: auto;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        object-fit: contain;
+        object-position: bottom;
     }
 }

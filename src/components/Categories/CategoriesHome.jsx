@@ -5,30 +5,23 @@ import global from "../../styles/global.module.css";
 import { categoriesId } from "../../data/config.js";
 //conps
 import CategorieBtnSmall from "../utilities/buttons/CategorieBtnSmall";
+import Head from "../utilities/categorieHead/Head";
 //img
 import CategorieImg from "../../img/categoriaActionsSmal.png";
 
-
 const CategoriesHome = () => {
-
   return (
     <section className={global.mwfix}>
       <div className={styles.categories__grid}>
-        <div className={styles.categories__title}>
-          <h2>
-            {" "}
-            <span>Categories</span> we think you’ll like
-          </h2>
-        </div>
-        <div className={styles.divisor}></div>
+        <Head title={"we think you’ll like"} titleSpan={"Categories"} />
         <div className={styles.categories__containerGrid}>
           {categoriesId.map((item) => (
             <CategorieBtnSmall
-            key={item.id}
+              key={item.id}
               categorie={`${item.name}`}
               id={item.id}
               img={CategorieImg}
-              classStyles={`${item.name+item.id}`}
+              classStyles={`${item.name + item.id}`}
             ></CategorieBtnSmall>
           ))}
         </div>

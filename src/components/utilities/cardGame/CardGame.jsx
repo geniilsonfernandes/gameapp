@@ -1,7 +1,6 @@
 import React from "react";
 import card from "./CardGame.module.css";
 
-
 //svg
 import WinSvg from "../../../svg/cover/WinSvg";
 import PsSvg from "../../../svg/cover/PsSvg";
@@ -12,18 +11,27 @@ import FavoriteSvg from "../../../svg/nav/FavoriteSvg";
 
 import { Link } from "react-router-dom";
 
-const CardGame = () => {
+const CardGame = (props) => {
+
+  const {name} = props;
+  const {img} = props;
+  
+
+
+
+
+
 
 
 
 
   return (
     <div className={card.cardgame}>
-      <div className={ card.cardImage}>
-        
+      <div className={card.cardImage}>
+        <img className={card.card__background} src={img} alt={name} />
       </div>
       <div className={card.info}>
-        <h2>Mass Effect™: Andromeda</h2>
+        <h2>{name}</h2>
         <div className={card.descrip}>
           <div className={card.platforms}>
             <WinSvg color={"#B7B7B7"} />
@@ -46,9 +54,7 @@ const CardGame = () => {
           <FavoriteSvg />{" "}
         </Link>
       </div>
-      <div className={card.Action4}>
-
-      </div>
+      <div className={card.Action4}></div>
     </div>
   );
 };

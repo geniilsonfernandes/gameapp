@@ -1,10 +1,6 @@
 .cover__photo {
     height: 480px;
     background: #202528;
-    /* background-image: url("https://media.rawg.io/media/games/370/3703c683968a54f09630dcf03366ea35.jpg"); */
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
     margin: 0 8px;
     border-radius: 8px;
     position: relative;
@@ -22,6 +18,8 @@
     bottom: 0;
     background: linear-gradient(19deg, #8400e5 0.34%, rgba(132, 0, 229, 0) 65.68%);
 }
+
+
 
 .game__info {
     z-index: 1;
@@ -126,6 +124,29 @@
     border: 1px solid white;
     border-radius: 8px;
 }
+.cover__background{
+    width: 100%;
+    top: 0;
+    object-fit: contain;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+}
+
+@media screen and  (max-width:1090px){
+    .cover__background{
+       
+        height: 100%;
+        top: 0;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        z-index: 0;
+    }
+    
+}
+
+
 
 @media screen and (max-width: 746px) {
     .cover__photo {
