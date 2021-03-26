@@ -15,15 +15,6 @@ const CardGame = (props) => {
 
   const {name} = props;
   const {img} = props;
-  
-
-
-
-
-
-
-
-
 
   return (
     <div className={card.cardgame}>

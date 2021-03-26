@@ -1,0 +1,40 @@
+.button__favorite {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    
+    height: 40px;
+    width: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    
+}
+
+@media screen and (max-width: 580px){
+    
+    .button__favorite {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        
+        height: 40px;
+        width: 40px;
+        
+        max-height: 40px;
+        max-width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        
+        border-radius: 20px;
+        border: 1px solid #ffffff;
+        
+    }
+}

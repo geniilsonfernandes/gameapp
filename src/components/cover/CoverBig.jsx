@@ -4,17 +4,18 @@ import React, { useState, useEffect } from "react";
 import styles from "./CoverBig.module.css";
 import global from "../../styles/global.module.css";
 //svg
-import MoreSvg from "../../svg/cover/MoreSvg";
+
 //import RemoveFavorite from "../../svg/cover/RemoveFavorite";
-import FavoriteSvg from "../../svg/nav/FavoriteSvg";
+
 import BackSvg from "../../svg/cover/BackSvg";
 import NextSvg from "../../svg/cover/NextSvg";
 //
 import Skeleton from "../utilities/skeleton/Skeleton";
-import { Link } from "react-router-dom";
+
 
 import rawg from "../../data/rawg";
 import GameInfo from "./coverInfo/GameInfo";
+import BtnFavorite from "../utilities/buttons/BtnFavorite";
 
 const CoverBig = () => {
   //states
@@ -51,6 +52,8 @@ const CoverBig = () => {
       : setCountGame(countGame - 1);
   };
 
+
+
   //
   return (
     <div className={global.mwfix}>
@@ -73,24 +76,12 @@ const CoverBig = () => {
          
           <div className={styles.info__buttons}>
             {loading ? (
-              <Skeleton width={170} mw={'px'} mh={'px'} height={38}  marginL={0} marginR={8} />
-            ) : (
-              <Link to="categorie/3424234" className={styles.button__more}>
-                {" "}
-                <p>View more</p>
-                <MoreSvg />{" "}
-              </Link>
-            )}
-            {loading ? (
               <Skeleton width={170} height={38} mw={'px'} mh={'px'} marginL={0} marginR={8} />
             ) : (
-              <Link to="categorie/342rewrw" className={styles.button__favorite}>
-                {" "}
-                <p>Add favorite</p>
-                <FavoriteSvg />{" "}
-              </Link>
+              <BtnFavorite />
             )}
           </div>
+
         </div>
         <div className={styles.coverBtn}>
           <button

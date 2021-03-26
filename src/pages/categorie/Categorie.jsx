@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import CardGame from "../../components/utilities/cardGame/CardGame";
 
 const apiKey = "key=2f93b9a7bffb481a9ab214dcdb9530f0";
-
+//fetch
 const fetchBasic = async (id) => {
   const response = await fetch(
     `https://api.rawg.io/api/games?genres=${id}&${apiKey}`
@@ -17,6 +17,7 @@ const fetchBasic = async (id) => {
   return dados;
 };
 
+//comp
 const Categorie = () => {
   const params = useParams();
   const [gamelist, setGamelist] = useState([]);
@@ -37,13 +38,41 @@ const Categorie = () => {
 
   return (
     <section className={global.mwfix}>
-      <h1>{params.id}</h1>
+      <div className={categorie.title}>
+        <h2>Action Games</h2>
+        <p>
+          Trabalhe de dia e arrisque tudo à noite no Need for Speed™ Heat, corra
+          contra a polícia corrupta da cidade, em eventos das corridas de rua.
+        </p>
+
+        <div className={categorie.listControl}>
+          <div className={categorie.order}>
+            <h3>Order</h3>
+
+            <select className={categorie.orderOption} id="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+
+          </div>
+        </div>
+      </div>
+  
       <div className={categorie.grid}>
         {loading
-          ? [...new Array(8)].map((item,id) => {
-            return (
-              <Skeleton key={id} width={100} mw={"%"} height={250} mh={"px"} />
-            )})
+          ? [...new Array(8)].map((item, id) => {
+              return (
+                <Skeleton
+                  key={id}
+                  width={100}
+                  mw={"%"}
+                  height={250}
+                  mh={"px"}
+                />
+              );
+            })
           : gamelist.map((item) => (
               <CardGame
                 key={item.id}

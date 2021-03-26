@@ -2,7 +2,7 @@
     height: 480px;
     background: #202528;
     margin: 0 8px;
-    border-radius: 8px;
+
     position: relative;
 
     display: flex;
@@ -19,6 +19,14 @@
     background: linear-gradient(19deg, #8400e5 0.34%, rgba(132, 0, 229, 0) 65.68%);
 }
 
+.cover__background{
+    width: 100%;
+    top: 0;
+    object-fit: contain;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+}
 
 
 .game__info {
@@ -26,43 +34,6 @@
     margin: 0 0 40px 40px;
 }
 
-.info__name h1 {
-    font-weight: 600;
-    font-size: 26px;
-
-    color: #f5f5f5;
-}
-.info__publisher {
-    display: flex;
-    align-items: center;
-    margin: 2px 0 8px 0;
-}
-.info__publisher p {
-    font-weight: 400;
-    font-size: 14px;
-
-    color: #f5f5f5;
-}
-.info__platforms {
-    margin-left: 16px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 8px;
-}
-
-.divisor {
-    margin: 4px 0 8px 0;
-    width: 130px;
-    border: 1px solid #591beb;
-}
-
-.description p {
-    max-width: 400px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: #f5f5f5;
-}
 
 .info__buttons {
     margin-top: 16px;
@@ -70,39 +41,28 @@
     align-items: center;
     flex-flow: wrap;
 }
-.button__more,
+
 .button__favorite {
     cursor: pointer;
-    min-width: 120px;
-    max-width: 130px;
-    height: 38px;
-    padding: 0 8px;
     border: none;
     outline: none;
+    
+    height: 40px;
+    width: 40px;
+
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 6px;
-    font-weight: 400;
-    font-size: 14px;
-    margin-right: 10px;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-    color: #f2f2f2;
-    text-decoration: none;
-}
-.button__more p,
-.button__favorite p {
-    margin-right: 8px;
-}
-
-.button__more {
-    background: #591beb;
-}
-.button__favorite {
-    background: transparent;
+    
+    border-radius: 20px;
     border: 1px solid #ffffff;
+    
 }
 
+
+
+/*  botoes de navegação */
 .coverBtn {
     position: absolute;
     z-index: 1;
@@ -113,24 +73,22 @@
 .button__back {
     margin-right: 16px;
 }
-
 .button__back,
 .button__next {
     cursor: pointer;
+    border: none;
     display: flex;
     align-items: center;
-    padding: 10px 14px;
-    background: transparent;
-    border: 1px solid white;
-    border-radius: 8px;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #202528;
+    transition: 200ms;
 }
-.cover__background{
-    width: 100%;
-    top: 0;
-    object-fit: contain;
-    position: absolute;
-    right: 0;
-    z-index: 0;
+
+.button__back:hover,
+.button__next:hover{
+    background: #591beb;
 }
 
 @media screen and  (max-width:1090px){
@@ -173,29 +131,33 @@
         margin: 16px 16px 0 0;
         display: flex;
     }
-    .info__buttons{
-        justify-content: space-between;
-    }
-    .button__more,
-    .button__favorite {
-        max-width: 49%;
-        flex: 1 1 ;
-        margin: 0 0px 6px 0;
-    }
+    
 }
 
 @media screen and (max-width: 580px){
     
     .info__buttons{
-        justify-content:center;
+        justify-content:flex-start;
     }
-    .button__more,
-    .button__favorite{
-        min-width: 80%;
-        max-width: 100%;
-        margin: 0 0px 6px 0;
+    .button__favorite {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        
+        height: 40px;
+        width: 40px;
+        
+        max-height: 40px;
+        max-width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        
+        border-radius: 20px;
+        border: 1px solid #ffffff;
+        
     }
-
 
     .info__publisher {
         display: flex;
