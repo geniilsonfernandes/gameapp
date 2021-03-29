@@ -10,6 +10,7 @@ import GamePlatforms from "./GamePlatforms";
 
 const GameInfo = (props) => {
   const { loading } = props;
+  const { id } = props;
   const { name } = props;
   const { developers } = props;
   const { description } = props;
@@ -25,7 +26,7 @@ const GameInfo = (props) => {
               <Skeleton width={300} height={36} mw={"px"} mh={"px"} />
             ) : (
               <h1>
-                <Link to="/">{name}</Link>
+                <Link to={`/game/${id}`}>{name}</Link>
               </h1>
             )}
           </div>

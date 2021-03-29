@@ -46,6 +46,7 @@ const Coversingle = () => {
         <div className={styles.game__info}>
           <div className={styles.game__container}>
             <GameInfo
+              id={loading ? false : gamelist.id}
               name={loading ? false : gamelist.name}
               developers={loading ? false : gamelist.publishers[0].name}
               description={loading ? false : gamelist.description_raw}

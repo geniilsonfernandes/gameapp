@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+
 
 //css
 import styles from "./CoverBig.module.css";
@@ -14,17 +14,13 @@ import BtnFavorite from "../utilities/buttons/BtnFavorite";
 //
 import rawg from "../../data/rawg";
 
-const variants = {
-  open: { opacity: 1 },
-  closed: { opacity: 0 },
-};
 
 const CoverBig = () => {
   //states
   const [corrent, setCorrent] = useState(0);
   const [gamelist, setGamelist] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [isActive, setIsActive] = useState(false);
+
   // eslint-disable-next-line
   const [gamesID, setGamesID] = useState([364806, 51325, 42187, 5563, 41494]);
 
@@ -34,7 +30,7 @@ const CoverBig = () => {
       const response = await rawg.gamelist(gamesID);
       setGamelist(response);
       setLoading(false);
-      setIsActive(true);
+    
     }
     fetchData();
   }, [gamesID]);
@@ -60,15 +56,16 @@ const CoverBig = () => {
         />
 
         <div className={styles.game__info}>
-          <motion.div animate={isActive ? "open" : "closed"} variants={variants}>
+        
             <GameInfo
+              id={loading ? false : gamelist[corrent].id}
               name={loading ? false : gamelist[corrent].name}
               developers={loading ? false : gamelist[corrent].publishers[0].name}
               description={loading ? false : gamelist[corrent].description_raw}
               platforms={loading ? false : gamelist[corrent].parent_platforms}
               loading={loading}
             />
-          </motion.div>
+        
 
           <div className={styles.info__buttons}>
             {loading ? (
